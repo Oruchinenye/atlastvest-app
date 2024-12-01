@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="sign-in.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="logo-container">
+                <img src="images/ATLAS logo.png" alt="logo">
+                <h1>Atlastvest</h1>
+            </div>
+            <h1>Sign in</h1>
+            <form>
+                <label for="fullName"></label>
+                <input type="text" id="fullName" placeholder="Full name" required>
+                <br>
+                <br>
+
+                <label for="email"></label>
+                <input type="email" id="email" placeholder="Email &#10;example@domain.com" required>
+                <br>
+                <br>
+
+                <label for="password"></label>
+                <input type="password" id="password" placeholder="Password" required>
+
+                <button type="submit" class="sign-up-btn">Sign in</button>
+                <div class="flex">
+                    <div class="requirement">
+                        <input type="checkbox"> 
+                        <p>Remember me</p>
+                    </div>
+                    <p><a href="#" class="forgot-password">Forgot Password?</a></p>
+                </div>
+                <p>OR</p>
+                <button type="button" class="google-btn">
+                    <span></span> Sign in with Google
+                </button>
+            </form>
+                <p>Do not have an account? <a href="#">Sign up</a></p>
+        </div>
+        <div class="image-container"></div>
+    </div>
+</body>
+</html>
