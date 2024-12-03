@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
     <link rel="stylesheet" href="sign-in.css">
+    <script src="./assets/js/db.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,7 +15,7 @@
                 <h1>Atlastvest</h1>
             </div>
             <h1>Sign in</h1>
-            <form>
+            <form id="signInForm">
                 <label for="email"></label>
                 <input type="email" id="email" placeholder="Email &#10;example@domain.com" required>
                 <br>
@@ -40,5 +41,29 @@
         </div>
         <div class="image-container"></div>
     </div>
+
+
+    <script>
+        const signInForm= document.getElementById('signInForm');
+        signInForm.addEventListener('submit', processSignIn)
+        const urlParams = new URLSearchParams(window.location.search)
+        // let next_page =  urlParams.get('next_page') || '/'
+
+            async function processSignIn(event, next_page) {
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const result = await handleSignIn({email:email,password:password})
+                if (result.status === 200) {
+                    window.location.replace('/')
+                } else {
+                    alert("invalid login detail")
+                }
+            }
+
+
+       
+        
+    </script>
 </body>
 </html>
