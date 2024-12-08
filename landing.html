@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body>
+    <!-- ----Header----- -->
+    <header>
+        <nav>
+            <!-- logo -->
+            <div class="atlas-logo">
+                <img src="./images/ATLAS logo.png" alt="logo">
+                <h1>AtlastVest</h1>
+                <ion-icon class="menu-icon" id="menu-icon" name="menu-outline"></ion-icon>
+            </div>
+
+            <!-- list menu -->
+             <div id="nav-menu" class="hidden">
+                <ul >
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Client Stories</a></li>
+                </ul>
+
+                <ul class="menu-list">
+                    <li><a href="sign-in.html">SignIn</a></li>
+                    <li><a href="user.html">Get Started</a></li>
+                </ul>
+             </div>
+        </nav>
+    </header>
+
+    <!-- ---Hero Section---- -->
+     <div class="hero-container">
+        <figure class="curved-bg">
+            <img src="./images/curvedstyle.svg" alt="#">
+        </figure>
+
+        <figure class="sec-curved-bg">
+            <img src="./images/curvedstyle.svg" alt="#">
+        </figure>
+
+        <div class="hero-content">
+            <article class="hero-article">
+                <h1 class="toph1">
+                    Invest Small, Start Smart.<br/>
+                    “Welcome to AtlasVest!"
+                </h1>
+                <p class="context">
+                    Grow your wealth through easy savings <br/>and smart investments
+                     with just $1 (#1,700)
+                </p>
+
+                <div class="hero-btns">
+                    <p><a href="#">Sign Up Now</a></p>
+                    <p><a href="#">Learn More</a></p>
+                </div>
+            </article>
+
+            <fig class="mobileimg">
+                <img src="./images/mobileimg.svg" alt="#">
+            </fig>
+        </div>
+     </div>
+
+
+     <!-- -----------WHY SECTION----------- -->
+     <section id="why">
+        <div>
+            <h1 class="why-text">Why Choose AtlastVest</h1>
+            <div class="slider-container">
+
+                <div class="swiper why-slider">
+                    <div class="swiper-wrapper why-slidercontainer ">
+        
+                       <!-- --------SLIDE 1------- -->
+                        <div class="swiper-slide why-content ">
+                            <p>"Your trusted partner for accessible, se
+                                cure, 
+                                and growth-focused investing."
+                            </p>
+                            <p>"AtlasVest simplifies the investment process, giving 
+                               you the tools to grow wealth at your own pace. Whether 
+                               you're a<br> first-time investor or a seasoned expert, we provide secure,
+                                accessible, and user-friendly solutions to achieve your
+                               financial goals."
+                            </p>
+                        </div>
+
+
+                        <!-- --------SLIDE 2------- -->
+                        <div class="swiper-slide why-content  ">
+                            <p>"Your trusted partner for accessible, se
+                                cure, 
+                                and growth-focused investing."
+                            </p>
+                            <p>"AtlasVest simplifies the investment process, giving 
+                               you the tools to grow wealth at your own pace. Whether 
+                               you're a <br> first-time investor or a seasoned expert, we provide secure,
+                                accessible, and user-friendly solutions to achieve your
+                               financial goals."
+                            </p>
+                        </div>
+                    </div>
+        
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+        
+    
+                    <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </digv>
+     </section>
+
+
+    
+
+    <!-- JavaScript -->
+     <script>
+        const menuIcon = document.getElementById("menu-icon")
+        const navMenu = document.getElementById("nav-menu")
+
+
+        /// Toggle Menu visiblity
+        menuIcon.addEventListener("click", ()=> {
+            navMenu.classList.toggle("hidden");
+
+            const isMenuOpen = navMenu.classList.contains("hidden");
+
+            /// Change icon between "menu" and "close"
+            menuIcon.name = isMenuOpen ? "menu-outline" : "close-outline";
+
+        })
+
+
+        // SWIPER SLIDE INTEGRATION
+        document.addEventListener("DOMContentLoaded", () => {
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            spaceBetween: 20,
+            slidesPerView: "auto",
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+      });
+
+
+        
+
+
+
+     </script>
+
+    <script type="" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
