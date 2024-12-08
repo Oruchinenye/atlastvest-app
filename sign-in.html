@@ -55,7 +55,8 @@
                 const password = document.getElementById('password').value;
                 const result = await handleSignIn({email:email,password:password})
                 if (result.status === 200) {
-                    window.location.replace('/')
+                   // window.location.replace('/')
+                   alert('password correct. logged in')
                 } else {
                     alert("invalid login detail")
                 }
