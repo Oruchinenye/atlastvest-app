@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returning user</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+     <!-- ----Header----- -->
+    <header>
+        <nav>
+            <!-- logo -->
+            <div class="atlas-logo">
+                <img src="./images/ATLAS logo.png" alt="logo">
+                <h1>AtlastVest</h1>
+            </div>
+
+            <!-- search bar -->
+             <div class="setting-nav">
+                <div class="search-bar">
+                    <input type="text" placeholder="search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+    
+                <!-- right nav -->
+                <div class="right-nav">
+                   
+                    <ion-icon class="set-icon" name="notifications-outline"></ion-icon>
+                     <p class="Settings-text">Profile Settings</p>
+                </div>
+             </div>
+           
+        </nav>
+    </header>
+
+    <!-- user section -->
+     <div class="user-container">
+
+        <div id="sideNav" class="side-nav">
+            <fig class="top-nav">
+                <div class="profile-cont">
+                    <img src="./images/profileimg.svg" alt="Profile">
+                    <p>View Profile</p>
+                </div>
+
+                <ion-icon id="close-icon" name="close-outline"></ion-icon>
+            </fig>
+
+            <div class="dashboard-nav">
+                <div class="dashBtn">
+                    <p>My Dashboard</p>
+                    <ion-icon id="arrow-downicon" name="caret-down-outline"></ion-icon>
+                </div>
+
+                <ul class="dashboard-menu hidden">
+                    <li><a href="#">Deposit Funds</a></li>
+                    <li><a href="#">Withdraw Funds</a></li>
+                    <li><a href="#">Portfolio Tracking</a></li>
+                    <li><a href="#">investment Option</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="landing.html">About Us</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="openicon-div">
+                <ion-icon id="open-Icon" name="menu-outline"></ion-icon>
+            </div>
+            <article>
+                <h1>"Welcome back, Alex!"</h1>
+                <p>Let's get started</p>
+            </article>
+
+            <div class="analytics-container">
+                <!-- Top -->
+                <div class="account-status">
+                    <figure class="top-balance-container">
+                        <p>Total Balance  
+                            <span><img src="./images/eye-off.svg" alt="#">
+                            </span>
+                        </p>
+                        <p> #3500 
+                        <span><img src="./images/refreshicon.svg" alt="#"></span></p>
+                    </figure>
+
+                    <figure class="bottom-balance-container">
+                        <!-- 1st row -->
+                        <div class="withdraw-container">
+                            <span><img src="./images/credit-card.svg" alt="#"></span>
+                            <p>Total Withdrawal</p>
+                            <p>#3500</p>
+                        </div> 
+
+                         <!-- 2nd row -->
+                        <div class="withdraw-container">
+                            <span><img src="./images/credit-card.svg" alt="#"></span>
+                            <p>Total Deposit</p>
+                            <p>#4200</p>
+                        </div> 
+
+                         <!-- 3rd row -->
+                         <div class="withdraw-container">
+                            <span><img src="./images/credit-card.svg" alt="#"></span>
+                            <p>Total investment</p>
+                            <p>#5500</p>
+                        </div> 
+
+                         <!-- 4th row -->
+                        <div class="withdraw-container">
+                            <span><img src="./images/credit-card.svg" alt="#"></span>
+                            <p>Current Investment</p>
+                            <p>#4500</p>
+                        </div> 
+                    </figure>
+                </div>
+
+
+                <div class="graph">
+                    <figure>
+                        <img src="./images/CHART 2.svg" alt="#">
+                    </figure>
+
+                    <figure>
+                        <img src="./images/Chart1.svg" alt="#">
+                    </figure>
+                </div>
+
+                <div class="activity">
+                    <figure>
+                        <img src="./images/Activity.svg" alt="#">
+                    </figure>
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+
+     <!-- ----JAVASCRIPT-- -->
+      <script>
+        const dashboardNav = document.querySelector(".dashboard-nav");
+        const dashboardMenu = document.querySelector(".dashboard-menu");
+        const arrowDownIcon = document.getElementById("arrow-downicon")
+
+
+        /// Toggle dashboard menu visibility
+        arrowDownIcon.addEventListener("click", ()=> {
+            dashboardMenu.classList.toggle("hidden")
+
+            const isMenuOpen = dashboardMenu.classList.contains("hidden");
+
+            /// change icon between "down arrow"  and up arrrow
+            arrowDownIcon.name = isMenuOpen ? "caret-down-outline" : "caret-up-outline";
+        })
+
+
+        /// Function to display side nav
+        const sideNav = document.getElementById("sideNav");
+        const openIcon = document.getElementById("open-Icon");
+        const closeIcon = document.getElementById("close-icon")
+        
+        
+        openIcon.addEventListener("click", ()=> {
+            sideNav.classList.add("show")
+        })
+
+        closeIcon.addEventListener("click", ()=> {
+            sideNav.classList.remove("show")
+        })
+
+      </script>
+
+
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
