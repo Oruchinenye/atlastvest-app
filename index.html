@@ -56,24 +56,24 @@
             const password = document.getElementById('password').value;
 
             const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            const passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+={}\[\]:;"'<>,.?/-])[a-zA-Z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?/-]{8}$/;
+            const passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
 
             if (name.length < 5 ) {
                 alert('name is too short')
             } else if (!emailPattern.test(email)) {
                 alert('please enter a valid email address')
             } else if (!passwordPattern.test(password)) {
-                alert("please enter a valid password") //password must be 8digits alphanumeric, with at least one special character
+                alert("please enter a valid password. password must be a minimum of 8 characters, contain one number and one special character") //password must be 8digits alphanumeric, with at least one special character
             }else {
                 data = {name:name, email:email, password:password}
 
             const res = await createUser(data)
             if (res.status===422) {
-                alert('email already in use') //change this to some custome error display
+                alert('email already in use') //change this to some custom error display
             } else if (res.status ===500) {
                 alert('an error occurred. please retry')
             } else {
-                alert("account created") 
+                 window.location.replace('sign-in.html')
             }
             }  
         }
