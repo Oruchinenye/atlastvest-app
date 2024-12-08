@@ -69,12 +69,11 @@
 
             const res = await createUser(data)
             if (res.status===422) {
-                alert('email already in use') //change this to some custome error display
+                alert('email already in use') //change this to some custom error display
             } else if (res.status ===500) {
                 alert('an error occurred. please retry')
             } else {
-                alert("account created") 
-                userForm.reset()
+                 window.location.replace('sign-in.html')
             }
             }  
         }
