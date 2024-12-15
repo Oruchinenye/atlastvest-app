@@ -77,10 +77,15 @@ header .right-nav{
 
 
 .openicon-div{
+    width: 2.5rem;
+    background-color: var(--secondary-color);
     top: 6rem;
     left: 2rem;
     position: fixed;
- 
+    display: flex;
+    justify-content: center;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
 }
 
 #open-Icon{
@@ -217,14 +222,6 @@ header .right-nav{
     text-align: center;
 }
 
-.openicon-div{
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-    text-align: center;
-    display: flex;
-    padding: 0.2rem;
-    box-shadow: 0 0 3px 2px rgba(0,0,0,0.1);
-}
 
 .hero .analytics-container{
     width: 100%;
@@ -299,11 +296,19 @@ header .right-nav{
         display: none;
     }
 
+
     .openicon-div{
+        width: 2.5rem;
+        background-color: var(--secondary-color);
         top: 1.5rem;
-        right: -16em;
+        left: 20rem;
         position: fixed;
         z-index: 50;
+    }
+    
+
+    #open-Icon{
+        right: 2rem;
     }
 
     .side-nav{
