@@ -3,81 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="./assets/js/db.js" defer> </script>
+    <title>Landing Page</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="landing.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="form-container">
-            <div class="logo-container">
-                <img src="images/ATLAS logo.png" alt="logo">
-                <h1>Atlastvest.</h1>
+    <!-- ----Header----- -->
+    <header>
+        <nav>
+            <!-- logo -->
+            <div class="atlas-logo">
+                <img src="./images/ATLAS logo.png" alt="logo">
+                <h1>AtlastVest</h1>
+                <ion-icon class="menu-icon" id="menu-icon" name="menu-outline"></ion-icon>
             </div>
-            <h1>Create an account</h1>
-            <form id="signUpForm">
-                <label for="fullName"></label>
-                <input type="text" id="fullName" placeholder="Full name" required>
-                <br>
-                <br>
 
-                <label for="email"></label>
-                <input type="email" id="email" placeholder="Email &#10;example@domain.com" required>
-                <br>
-                <br>
+            <!-- list menu -->
+             <div id="nav-menu" class="hidden">
+                <ul >
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#how">How it works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#stories">Client Stories</a></li>
+                </ul>
 
-                <label for="password"></label>
-                <input type="password" id="password" placeholder="Password" required>
+                <ul class="menu-list">
+                    <li><a href="sign-in.html">SignIn</a></li>
+                    <li><a href="user.html">Get Started</a></li>
+                </ul>
+             </div>
+        </nav>
+    </header>
 
-                <button type="submit" class="sign-up-btn">Sign up</button>
-                <p>
-                    By signing up, I agree with the 
-                    <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a>.
+    <!-- ---Hero Section---- -->
+     <div class="hero-container">
+        <figure class="curved-bg">
+            <img src="./images/curvedstyle.svg" alt="#">
+        </figure>
+
+        <figure class="sec-curved-bg">
+            <img src="./images/curvedstyle.svg" alt="#">
+        </figure>
+
+        <div class="hero-content">
+            <article class="hero-article">
+                <h1 class="toph1">
+                    Invest Small, Start Smart.<br/>
+                    “Welcome to AtlasVest!"
+                </h1>
+                <p class="context">
+                    Grow your wealth through easy savings <br/>and smart investments
+                     with just $1 (#1,700)
                 </p>
-                <p>OR</p>
-                <button type="button" class="google-btn">
-                    <span></span> Sign up with Google
-                </button>
-            </form>
-                <p>Already have an account? <a href="sign-in.html">Sign in</a></p>
+
+                <div class="hero-btns">
+                    <p><a href="./signup.html">Sign Up Now</a></p>
+                    <p><a href="#features">Learn More</a></p>
+                </div>
+            </article>
+            
+            <fig class="mobileimg">
+                <img src="./images/mobileimg.svg" alt="#">
+            </fig>
         </div>
-        <div class="image-container"></div>
-    </div>
+     </div>
 
 
-    <script>
-        const userForm = document.getElementById('signUpForm');
-        userForm.addEventListener('submit', processSignUp )
+     <!-- -----------WHY SECTION----------- -->
+     <section id="why">
+        <div>
+            <h1 class="headerText">Why Choose AtlastVest</h1>
 
-        async function processSignUp(event) {
-            event.preventDefault();
-            const name = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            <!-- SPLIDE SLIDER -->
+            <div id="why-slider" class="splide">
+                <div class="splide__track feattrack">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                         <!-- --------SLIDE 1------- -->
+                          <div class="why-content ">
+                            <p>"Your trusted partner for accessible, secure, 
+                                and growth-focused investing."
+                            </p>
+                            <p>"AtlasVest simplifies the investment process, giving 
+                               you the tools to grow wealth<br>  at your own pace. Whether 
+                               you're a first-time investor or a seasoned expert,<br>  we provide secure,
+                                accessible, and user-friendly solutions to achieve your
+                               financial goals."
+                            </p>
+                           </div>
+                        </li>
 
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            const passwordPattern = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+={}\[\]:;"'<>,.?/-])[a-zA-Z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?/-]{8}$/;
 
-            if (name.length < 5 ) {
-                alert('name is too short')
-            } else if (!emailPattern.test(email)) {
-                alert('please enter a valid email address')
-            } else if (!passwordPattern.test(password)) {
-                alert("please enter a valid password") //password must be 8digits alphanumeric, with at least one special character
-            }else {
-                data = {name:name, email:email, password:password}
+                        <li class="splide__slide">
+                            <div class="why-content ">
+                                <p>"Your trusted partner for accessible, secure, 
+                                    and growth-focused investing."
+                                </p>
+                                <p>"AtlasVest simplifies the investment process, giving 
+                                   you the tools to grow wealth<br>  at your own pace. Whether 
+                                   you're a first-time investor or a seasoned expert,<br>  we provide secure,
+                                    accessible, and user-friendly solutions to achieve your
+                                   financial goals."
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-            const res = await createUser(data)
-            if (res.status===422) {
-                alert('email already in use') //change this to some custome error display
-            } else if (res.status ===500) {
-                alert('an error occurred. please retry')
-            } else {
-                alert("account created") 
-            }
-            }  
-        }
+        </div>
+     </section>
+
+
+     <!-- -----------FEATURE SECTION----------- -->
+      <section id="features">
+        <h1 class="headerText featureText">Key Features</h1>
+        <div class="feature-container">
+            <article class="l-content">
+                <p>Accessible investing</p>
+                <p>Begin your investment journey with
+                    as little as $1 (#1,700) through micro-investments
+                    like stocks.
+                </p>
+            </article>
+
+            <article class="c-content">
+                <p>Manage Funds Easily</p>
+                <p>Deposit or withdraw funds </p>
+            </article>
+
+            <article class="r-content">
+                <p>Track Your Growth</p>
+                <p>Monitor your portfolio and investments with
+                     realtime updates and secure transactions</p>
+            </article>
+        </div>
+      </section>
+
+
+      <!-- -----------HOW  IT WORKS SECTION----------- -->
+       <section id="how">
+        <h1 class="headerText">How It Works</h1>
+        <div>
+            <article class="how-article-cont">
+                "Start small, grow big. 
+                 With AtlasVest, your journey to financial freedomis as easy as A-B-C.<br> 
+                 Create an account in minutes, choose from investment options
+                  tailored to you,<br> and track your progress in real time—all on 
+                  one secure platform."
+            </article>
+        </div>
+
+        <div class="steps-cont">
+            <article class="steps-content first">
+                <p>Create Account</p>
+                <ul>
+                    <li>Sign Up in just few clicks</li>
+                    <li>All you need is your name, email address
+                        and a secure password to get started
+                    </li>
+                </ul>
+            </article>
+
+            <article class="steps-content">
+                <p>Choose Your Investment Plan</p>
+                <p>
+                   Explore our micro-investment options, tailored to
+                   fit your goals. From stocks to other opportunities, you 
+                   can invest with confidence, starting at just $1.
+                </p>
+            </article>
+
+            <article class="steps-content">
+                <p>Choose Your Investment Plan</p>
+                <p>
+                    Monitor your investments with our real-time dashboard.
+                    Watch your portfolio grow as you make informed decisions
+                    with the help of our tools and insights.
+                </p>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- -----------STORIES SECTION----------- -->
+    <section id="stories">
+        <h1 class="headerText sheading">Client's Stories</h1>
+
+        <div id="stories-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="stories-article">
+                            <figure class="profile">
+                                <img src="./images/profileimg.svg" alt="#">
+                            </figure>
+                            <div class="stories-context">
+                                <p>"I started with just $1 on AtlasVest, and now I’m seeing real growth.
+                                    The platform is intuitive, and I feel secure knowing my funds are protected."
+                                </p>
+                                <p class="profile-name"> – Jane D. Business Consultant</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="stories-article">
+                            <figure class="profile">
+                                <img src="./images/profileimg.svg" alt="#">
+                            </figure>
+                            <div class="stories-context">
+                                <p>"I started with just $1 on AtlasVest, and now I’m seeing real growth.
+                                    The platform is intuitive, and I feel secure knowing my funds are protected."
+                                </p>
+                                <p class="profile-name"> – Jane D. Business Consultant</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         
-    </script>
+    </section>
+
+
+     <!-- -----------HIGHLIGHT SECTION----------- -->
+      <section id="highlight">
+        <div class="highlight-cont">
+            <article class="highlight-article">
+                <h1>Easy Accesibility</h1>
+                <p>"Empowering you to grow wealth one small investment at a time."</p>
+    
+                <ul class="access-list">
+                    <li><img src="./images/markicon.svg">micro-investing</li>
+                    <li><img src="./images/markicon.svg">Instant Transactions</li>
+                    <li><img src="./images/markicon.svg"> Portfolio Insights</li>
+                </ul>
+            </article>
+            <figure class="side-hero">
+                
+            </figure>
+          </div>
+      </section>
+    
+
+   <!-- -----------FOOTER SECTION----------- -->
+    <section id="footer">
+        <div class="footer-cont">
+            <article class="top-footer">
+                <div class="left-top">
+                    <h2>AtlastVest</h2>
+                    <p>Platform You Can Trust</p>
+                </div>
+
+                <div class="right-top">
+                  <p class="subscribe-text">Subscribe To Our NewsLetter</p>
+                  <div class="form-cont">
+                    <input type="text" placeholder="Your Email Address">
+                    <p>Get Started</p>
+                  </div>
+                </div>
+            </article>
+
+            <article class="center-footer">
+                <div class="media">
+                    <h2>Social Media</h2>
+                    <p><img class="icon-logo" src="./images/Facebook.svg" alt="#">Facebook</p>
+                    <p><img class="icon-logo" src="./images/twitter.svg" alt="#">Twitter</p>
+                    <p> <img class="icon-logo" src="./images/instagram.svg" alt="#">Instagram</p>
+                </div>
+
+                <div class="features-div">
+                    <h2>Features</h2>
+                    <p>Secure Transaction</p>
+                    <p>Deposit/Withdraw</p>
+                    <p>Portfolio Tracking</p>
+                </div>
+
+                <figure class="logo-div">
+                    <img src="./images/atlastsignature.svg" alt="#">
+                </figure>
+            </article>
+        </div>
+        <article class="bottom-footer">
+            <p>About Us</p>
+            <p>Contact</p>
+            <p>Terms & Condition</p>
+            <p>Privacy</p>
+        </article>
+    </section>
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- JavaScript -->
+     <script>
+        const menuIcon = document.getElementById("menu-icon")
+        const navMenu = document.getElementById("nav-menu")
+
+
+        /// Toggle Menu visiblity
+        menuIcon.addEventListener("click", ()=> {
+            navMenu.classList.toggle("hidden");
+
+            const isMenuOpen = navMenu.classList.contains("hidden");
+
+            /// Change icon between "menu" and "close"
+            menuIcon.name = isMenuOpen ? "menu-outline" : "close-outline";
+
+        })
+
+
+        // WHY SWIPER SLIDE INTEGRATION
+        document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#why-slider', {
+            type   : 'loop', // Makes the slider loop infinitely
+            perPage: 1,      // Show one slide per page
+            autoplay: true,  // Enable auto play
+            pauseOnHover: true,
+            pagination: true, // Show dots for navigation
+        }).mount();
+       });
+
+
+
+      /// STORIES SLIDER
+      document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#stories-slider', {
+            type   : 'loop', // Makes the slider loop infinitely
+            perPage: 1,      // Show one slide per page
+            autoplay: true,  // Enable auto play
+            pauseOnHover: true,
+            pagination: true, // Show dots for navigation
+        }).mount();
+       });
+
+
+
+     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script type="" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
