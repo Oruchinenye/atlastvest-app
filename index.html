@@ -224,43 +224,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="image-container"></div>
-    </div>
-
-
-    <script>
-        const userForm = document.getElementById('signUpForm');
-        userForm.addEventListener('submit', processSignUp )
-
-        async function processSignUp(event) {
-            event.preventDefault();
-            const name = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            const passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
-
-            if (name.length < 5 ) {
-                alert('name is too short')
-            } else if (!emailPattern.test(email)) {
-                alert('please enter a valid email address')
-            } else if (!passwordPattern.test(password)) {
-                alert("please enter a valid password. password must be a minimum of 8 characters, contain one number and one special character") //password must be 8digits alphanumeric, with at least one special character
-            }else {
-                data = {name:name, email:email, password:password}
-
-            const res = await createUser(data)
-            if (res.status===422) {
-                alert('email already in use') //change this to some custom error display
-            } else if (res.status ===500) {
-                alert('an error occurred. please retry')
-            } else {
-                 window.location.replace('sign-in.html')
-            }
-            }  
-        }
         
     </section>
 
@@ -374,8 +337,6 @@
             pagination: true, // Show dots for navigation
         }).mount();
        });
-
-
 
      </script>
 
