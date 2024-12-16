@@ -230,7 +230,7 @@ ul a{
     /* ***Show menu when not hidden*** */
 
     #nav-menu:not(.hidden){
-        transform: translateX(105%);
+        transform: translateX(115%);
     }
 
 
