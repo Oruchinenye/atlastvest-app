@@ -1,0 +1,40 @@
+.splash-container {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #9FE2BF;
+}
+
+img {
+      width: 8rem;
+      /* aspect-ratio: 1; */   
+}
+
+.splash-title {
+      font-size: 2em;
+      color: #fff;
+}
+
+.splash-text {
+      font-size: 1.5em;
+      color: #171A1F;
+      font-weight: 500;
+}
+
+a {
+      color: #fff;
+      background-color: #090009;
+      padding: 1em 1.5em;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+}
+
+a:hover {
+      opacity: .9;
+}
