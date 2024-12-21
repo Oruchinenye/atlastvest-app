@@ -94,14 +94,14 @@ function initializeFirebase() {
             return response
     }
 
-    function logOutUser(email) {
+    function logOutUser() {
             localStorage.removeItem('auth_info')
             window.location.replace('/')
     }
 
-    function checkAuthStatus(email) {
+    function checkAuthStatus() {
         const detail = JSON.parse(localStorage.getItem('auth_info'))
-        if (detail && detail.email==email) {
+        if (detail ) {
             return {message:'user is logged in', status:200}
         } else {
             return {message:'error getting login status', status:422}
@@ -115,6 +115,7 @@ function initializeFirebase() {
     window.handleSignIn = handleSignIn;  // usage: handleSignIn({email,password}, redirect_to)
     window.checkAuthStatus = checkAuthStatus;  // usage: checkAuthStatus(email)
     window.createUser = createUser;   //create user usage:handleSignUp({email,password,name})
+    window.logOutUser = logOutUser;   //create user usage:handleSignUp({email,password,name})
 
   }
   
